@@ -1,0 +1,18 @@
+{
+  "server": {
+    "port": 3000
+  },
+  "database": {
+    "host": "localhost",
+    "port": 27017,
+    "table": "Tora"
+  },
+  "session": {
+    "secret": "tora"
+  },
+  "admin": {
+    "name": "huaji",
+    "username": "admin",
+    "passwd": "19890913aa"
+  }
+}
