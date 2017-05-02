@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "yora",
   "license": "GPL-2.0",
-  "repository": "",
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EYHN/Tora.git"
+  },
+  "author": "EYHN",
   "keywords": [
     ""
   ],
