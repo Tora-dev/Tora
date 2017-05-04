@@ -1,5 +1,15 @@
+import config from './utils/conf';
+import * as path from 'path';
+import { default as PostModel, PostModelI } from './models/post';
 import { EventEmitter } from 'events';
+import eventEmitter from './eventEmitter';
 
-class Tora extends EventEmitter {
-
+export class ToraI {
+  public readonly version: string = config.get('version');
+  public post: PostModelI = PostModel;
+  public eventEmitter: EventEmitter = eventEmitter;
 }
+
+const Tora = new ToraI;
+
+export default Tora;

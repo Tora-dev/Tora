@@ -16,6 +16,8 @@ export function setupNconf(file: string = PATH_TO_CONFIG) {
 
   nconf.set('IS_PROD', (nconf.get('NODE_ENV') || 'development') === 'production');
   nconf.set('IS_DEV', (nconf.get('NODE_ENV') || 'development') === 'development');
+  nconf.set('version', '1.0.0');
+  nconf.set('ROOT_PATH', join(resolve(__dirname, '../../')));
 }
 
 setupNconf();

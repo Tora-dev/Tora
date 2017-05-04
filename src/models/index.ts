@@ -1,3 +1,5 @@
+import PostModel from './post';
+import Tora from '../Tora';
 import * as mongoose from 'mongoose';
 
 (mongoose as any).Promise = global.Promise;
@@ -10,3 +12,5 @@ export function connectDatabase(dburl: string) {
         });
     });
 }
+
+Tora.post = PostModel;
