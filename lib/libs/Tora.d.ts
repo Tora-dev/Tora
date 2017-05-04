@@ -1,5 +1,5 @@
 /// <reference types="node" />
-import { PostModelI } from './models/post';
+import { PostModelI } from '../models/post';
 import { EventEmitter } from 'events';
 export declare class ToraI {
     readonly version: string;

@@ -1,5 +1,5 @@
-import config from './utils/conf';
-import Logger from './utils/Logger';
+import config from '../utils/conf';
+import Logger from '../utils/Logger';
 import Tora from './Tora';
 import * as path from 'path';
 import * as fs from 'fs-extra';

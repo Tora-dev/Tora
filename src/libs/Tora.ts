@@ -1,6 +1,6 @@
-import config from './utils/conf';
+import config from '../utils/conf';
 import * as path from 'path';
-import { default as PostModel, PostModelI } from './models/post';
+import { default as PostModel, PostModelI } from '../models/post';
 import { EventEmitter } from 'events';
 import eventEmitter from './eventEmitter';
 

@@ -1,8 +1,8 @@
-import Tora from './Tora';
+import Tora from './libs/Tora';
 import 'babel-polyfill';
 import * as path from 'path';
 import PostModel from './models/post';
-import { loadPlugins } from './PluginsManager';
+import { loadPlugins } from './libs/PluginsManager';
 import * as express from 'express';
 import { connectDatabase } from './models/index';
 import { setupNconf } from './utils/conf';
