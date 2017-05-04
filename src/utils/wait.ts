@@ -1,9 +1,7 @@
 
-async function wait(time: number) {
+function wait(time: number) {
   return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve();
-    }, time);
+    setTimeout(resolve, time);
   });
 }
 
