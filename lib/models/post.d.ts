@@ -11,6 +11,7 @@ export interface PostI {
     tags: string[];
 }
 export interface PostModelI extends Model<Document> {
+    new (a: PostI): Document;
     findOneByTitle(title: string, cb?: (err: any, res: Document & PostI) => void): DocumentQuery<Document, Document>;
 }
 declare const PostModel: PostModelI;

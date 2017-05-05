@@ -4,12 +4,12 @@ import { default as PostModel, PostModelI } from '../models/post';
 import { EventEmitter } from 'events';
 import eventEmitter from './eventEmitter';
 
-export class ToraI {
+export class ToraC {
   public readonly version: string = config.get('version');
   public post: PostModelI = PostModel;
   public eventEmitter: EventEmitter = eventEmitter;
 }
 
-const Tora = new ToraI;
+const Tora = new ToraC;
 
 export default Tora;
