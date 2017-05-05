@@ -1,5 +1,5 @@
 import mongodbURL from '../../src/utils/mongodbURL';
-import { expect } from '../helper';
+import { expect } from '../helper/helper';
 
 describe('mongodbURL', () => {
   it('build url for mongodb', () => {

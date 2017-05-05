@@ -1,6 +1,6 @@
 import Logger from '../../src/utils/Logger';
 import log from '../../src/middlewares/log';
-import { expect, sandbox } from '../helper';
+import { expect, sandbox } from '../helper/helper';
 
 describe('middlewares: log', () => {
   const testRep = {

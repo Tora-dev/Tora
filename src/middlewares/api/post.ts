@@ -1,10 +1,13 @@
 import { Router, RequestHandler } from 'express';
 import PostModel from '../../models/post';
 
-const router = Router();
+const postApiRouter = Router();
 
-router.get('*', async (req, res, next) => {
-  res.json(await PostModel.find());
+postApiRouter.get('*', async (req, res, next) => {
+  res.set({
+    'Content-Type': 'application/json'
+  });
+  return res.json(await PostModel.find());
 });
 
-export default router as RequestHandler;
+export default postApiRouter as RequestHandler;

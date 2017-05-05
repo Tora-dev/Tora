@@ -1,4 +1,4 @@
-import { expect } from '../helper';
+import { expect } from '../helper/helper';
 import wait from '../../src/utils/wait';
 
 describe('wait', () => {

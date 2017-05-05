@@ -17,16 +17,6 @@ InjectionMiddlewares(app);
 
 connectDatabase(mongodbURL(config.get('database:host'), config.get('database:port'), config.get('database:table')))
   .then(() => {
-    new PostModel({
-      title: '123',
-      type: 'string',
-      date: new Date,
-      updateDate: new Date,
-      content: 'aaa',
-      source: 'bbb',
-      categories: ['asd'],
-      tags: ['dsa']
-    }).save();
     Logger.info('Database connect success!');
     Tora.eventEmitter.emit('connectDatabaseSuccess');
   })

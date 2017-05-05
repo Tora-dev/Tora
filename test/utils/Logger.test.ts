@@ -1,4 +1,4 @@
-import { expect, sandbox } from '../helper';
+import { expect, sandbox } from '../helper/helper';
 import Logger from '../../src/utils/Logger';
 
 describe('Logger', () => {
