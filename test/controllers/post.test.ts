@@ -1,3 +1,4 @@
+import { PostI } from '../../src/models/post';
 import * as doGenerate from '../../src/libs/generator';
 import { expect, sandbox } from '../helper/helper';
 import * as PostModel from '../../src/models/post';
@@ -38,21 +39,16 @@ describe('post controllers', () => {
     const doGenerateStub = sandbox.stub(doGenerate, 'doGenerate', () => {
       return '321';
     });
-    PostController.createPost({
+    const postData: PostI = {
       title: '',
       type: '',
       date: new Date,
       source: '123',
       sourceType: '',
-    });
+    };
+    PostController.createPost(postData);
     expect(doGenerateStub).to.be.calledOnce;
-    expect(PostModelStub).to.be.calledOnce.and.be.calledWith({
-      title: '',
-      type: '',
-      date: new Date,
-      source: '123',
-      content: '321',
-      sourceType: '',
-    });
+    postData.content = '321';
+    expect(PostModelStub).to.be.calledOnce.and.be.calledWith(postData);
   });
 });
