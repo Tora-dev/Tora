@@ -6,27 +6,30 @@ export interface PostI {
   title: string;
   type: string;
   date: Date;
-  updateDate: Date;
-  content: string;
+  updateDate?: Date;
+  content?: string;
   source: string;
-  categories: string[];
-  tags: string[];
+  sourceType?: string;
+  categories?: string[];
+  tags?: string[];
 }
 
-export interface PostModelI extends Model<Document> {
-  new(a: PostI): Document;
-  findOneByTitle(title: string, cb?: (err: any, res: Document & PostI) => void): DocumentQuery<Document, Document>;
+export interface PostDocumentI extends PostI, Document { }
+
+export interface PostModelI extends Model<PostDocumentI> {
+  findOneByTitle(title: string, cb?: (err: any, res: PostDocumentI) => void): DocumentQuery<Document, Document>;
 }
 
 const PostSchema = new Schema({
-    title: String,
-    type: String,
-    date: Date,
-    updateDate: Date,
-    content: String,
-    source: String,
-    categories: [String],
-    tags: [String],
+  title: String,
+  type: { type: String, default: 'Text' },
+  date: { type: Date, default: Date.now },
+  updateDate: Date,
+  content: String,
+  source: String,
+  sourceType: { type: String, default: 'markdown' },
+  categories: { type: [String], default: [] },
+  tags: { type: [String], default: [] },
 });
 
 PostSchema.statics.findOneByTitle = (title: string, cb?: any) => {
